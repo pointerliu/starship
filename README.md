@@ -24,6 +24,14 @@ This project will follow the lastest rocket-chip, the functions of each folder i
 |    src/main/scala   | Top Module & Configuration |  
 
 
+## Simulation
+
+> Verilator
+
+```bash
+make patch
+make vlt
+```
 
 ## Quickstart
 > I only promise that this project will work fine on ubuntu 20, vivado 2020.2.
