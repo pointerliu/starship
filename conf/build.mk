@@ -1,11 +1,22 @@
+# Make Target
+##################################
+STARSHIP_TARHET ?= SIM
+
+
 # Verilog Generation Configuration
 ##################################
-
 STARSHIP_CORE	?= Rocket
 STARSHIP_FREQ	?= 100
-STARSHIP_TH 	?= starship.fpga.TestHarness
-STARSHIP_TOP	?= starship.fpga.StarshipFPGATop
-STARSHIP_CONFIG	?= starship.fpga.StarshipFPGAConfig
+
+ifeq ($(STARSHIP_TARHET), SIM) 
+	STARSHIP_TH 	?= starship.asic.TestHarness
+	STARSHIP_TOP	?= starship.asic.StarshipSimTop
+	STARSHIP_CONFIG	?= starship.asic.StarshipSimConfig
+else
+	STARSHIP_TH 	?= starship.fpga.TestHarness
+	STARSHIP_TOP	?= starship.fpga.StarshipFPGATop
+	STARSHIP_CONFIG	?= starship.fpga.StarshipFPGAConfig
+endif
 
 
 # FPGA Configuration
