@@ -392,3 +392,5 @@ clean:
 
 clean-all:
 	rm -rf $(BUILD) $(SBT_BUILD)
+# TODO: better clean
+	rm -rf $(TOP)/repo/rocket-chip-fpga-shells/target
